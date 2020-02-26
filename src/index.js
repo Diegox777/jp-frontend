@@ -3,26 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core';
-
-const theme = createMuiTheme({
+import { MuiThemeProvider, createMuiTheme, CssBaseline, responsiveFontSizes } from '@material-ui/core';
+ 
+let theme = createMuiTheme({
   palette: {
+    type: 'dark',
     primary: {
-      light: '#fff',
-      main: 'rgb(23, 105, 170)',
-      dark: '#000'
+      main: '#00695f'
     },
     secondary: {
-      main: '#f44336',
-    },
-  },
-  typography: { 
-    useNextVariants: true
+      main: '#f50057'
+    }
   }
 });
+theme = responsiveFontSizes(theme);
 
 ReactDOM.render(
   <MuiThemeProvider theme={theme}>
+    <CssBaseline/>
     <App />
   </MuiThemeProvider>,
   document.getElementById('root'));
