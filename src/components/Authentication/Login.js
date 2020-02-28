@@ -1,40 +1,53 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import { Container, Typography, TextField } from '@material-ui/core';
+import { Container, Typography, TextField, Button } from '@material-ui/core';
+import SendIcon from '@material-ui/icons/Send';
 import logo from '../../images/logo.png';
 
 const useStyles = makeStyles(theme => ({
   container: {
     // border: '1px solid white',
-    display: 'flex',
-    width: '100%',
-    height: '80vh',
-    flexWrap: 'wrap'
   },
   paper: {
-    // border: '1px solid red',
+    // border: '1px solid white',
     marginTop: theme.spacing(5),
     marginBottom: theme.spacing(5),
-    width: "70%",
-    overflowX: "auto",
-    margin: "auto"
+    width: "80%",
+    margin: "auto",
+    display: 'flex',
+    flexDirection: 'column'
   },
   title: {
     // border: '1px solid white',
-    borderRadius: '6px',
-    margin: theme.spacing(2),
+    margin: theme.spacing(5),
+    flex: 1
   },
   login: {
-    // border: '1px solid blue',
-    display: 'flex',
+    // border: '1px solid white',
     width: '100%',
-    margin: theme.spacing(0),
-    flexWrap: 'no-wrap'
+    flex: 1,
+    display: 'flex',
+    flexWrap: 'wrap'
   },
   image: {
-    // border: '1px solid green',
-    width: '50%'
+    // border: '1px solid white',
+    flex: 1,
+  },
+  form: {
+    // border: '1px solid white',
+    flex: 1,
+    display: 'flex',
+    flexDirection: 'column',
+  },
+  formField: {
+    marginTop: theme.spacing(2),
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1)
+  },
+  buttons: {
+    display: 'flex',
+    // flexDirection: 'column'
   }
 }));
 
@@ -48,44 +61,37 @@ export default function Login() {
           Log in or Signup
         </Typography>
         <div className={classes.login}>
-            <img src={logo} alt="pato" className={classes.image}/>
+          <div className={classes.image}>
+            <img src={logo} alt="pato" />
+          </div>
+          <div className={classes.form}>
             <TextField
+              className={classes.formField}
               label="Nick"
               color="secondary"
-              style={{ margin: 8 }}
-              placeholder="Ej: tourist"
-              fullWidth
-              margin="normal"
-              InputLabelProps={{
-                shrink: true,
-              }}
+              variant="outlined"
             />
             <TextField
+              className={classes.formField}
               label="Password"
               color="secondary"
-              style={{ margin: 8 }}
-              placeholder="Ej: 123456"
-              fullWidth
+              variant="outlined"
               type="password"
-              margin="normal"
-              InputLabelProps={{
-                shrink: true,
-              }}
             />
             <TextField
+              className={classes.formField}
               label="Confirm password"
               color="secondary"
-              style={{ margin: 8 }}
-              fullWidth
-              helperText="Please confirm"
+              variant="outlined"
+              helperText="Please confirm your password"
               type="password"
-              margin="normal"
-              InputLabelProps={{
-                shrink: true,
-              }}
             />
+            <div className={classes.buttons}>
+              <Button variant="contained" color="secondary" endIcon={<SendIcon />}>Submit</Button>
+              <Button>Sign up for an account</Button>
+            </div>
+          </div>
         </div>
-
       </Paper>
     </Container>
   );

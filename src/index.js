@@ -9,10 +9,10 @@ let theme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: {
-      main: '#00695f'
+      main: '#455A64'
     },
     secondary: {
-      main: '#f50057'
+      main: '#FDD835'
     }
   }
 });
