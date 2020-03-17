@@ -17,28 +17,27 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1
-  },
+  }
 }));
 
 export default function Navbar() {
   const classes = useStyles();
-  const img = <img style={{marginTop: 10}} src="https://unsplash.it/40/40"/>;
   return (
 
     <div className={classes.root}>
-      <AppBar position="static" title={img}>
+      <AppBar position="fixed">
         <Toolbar>
+          <img src={logo} alt="Pato" style={{maxHeight: '45px', marginRight: '20px'}}/>
+          <Typography variant="h5" className={classes.title}>
+            UMSA Online Judge
+          </Typography>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <img src={logo} alt="Pato" style={{maxHeight: '45px', marginRight: '20px'}}/>
-          <Typography variant="h5" className={classes.title}>
-            Juez Patito v2
-          </Typography>
 
-          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
+      <Toolbar/>
     </div>
   );
 }

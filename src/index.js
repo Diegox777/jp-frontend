@@ -9,7 +9,7 @@ let theme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: {
-      main: '#455A64'
+      main: '#37474F'
     },
     secondary: {
       main: '#FDD835'
